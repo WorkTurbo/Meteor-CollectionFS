@@ -4,13 +4,13 @@ var Writable = Npm.require('stream').Writable;
 // https://github.com/nathanpeck/s3-upload-stream/blob/master/lib/s3-upload-stream.js
 // But much is rewritten and adapted to cfs
 
-AWS.S3.prototype.createReadStream = function(params, options) {
+S3.prototype.createReadStream = function(params, options) {
   // Simple wrapper
   return this.getObject(params).createReadStream();
 };
 
 // Extend the AWS.S3 API
-AWS.S3.prototype.createWriteStream = function(params, options) {
+S3.prototype.createWriteStream = function(params, options) {
   var self = this;
 
   //Create the writeable stream interface.
@@ -95,7 +95,6 @@ AWS.S3.prototype.createWriteStream = function(params, options) {
     // Get the chunk data
     var uploadingChunk = Buffer(currentChunk.length);
     currentChunk.copy(uploadingChunk);
-
 
     // Store the current part number and then increase the counter
     var localChunkNumber = partNumber++;

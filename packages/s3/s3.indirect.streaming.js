@@ -110,7 +110,7 @@ IndirectS3Stream.prototype._flush = function(done) {
 };
 
 // Extend the AWS.S3 API
-AWS.S3.prototype.createWriteStream = function(params, options) {
+S3.prototype.createWriteStream = function(params, options) {
   var self = this;
   params = params || {};
 
@@ -165,7 +165,7 @@ AWS.S3.prototype.createWriteStream = function(params, options) {
   }
 };
 
-AWS.S3.prototype.createReadStream = function(params, options) {
+S3.prototype.createReadStream = function(params, options) {
   // Simple wrapper
   return this.getObject(params).createReadStream();
 };

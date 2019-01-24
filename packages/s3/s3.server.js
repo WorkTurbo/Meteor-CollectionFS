@@ -1,5 +1,5 @@
 // We use the official aws sdk
-AWS = Npm.require('aws-sdk');
+S3 = Npm.require('aws-sdk/clients/s3');
 
 var validS3ServiceParamKeys = [
   'endpoint',
@@ -105,7 +105,7 @@ FS.Store.S3 = function(name, options) {
   // serviceParams = _.pick(serviceParams, validS3ServiceParamKeys);
 
   // Create S3 service
-  var S3 = new AWS.S3(serviceParams);
+  var S3 = new S3(serviceParams);
 
   return new FS.StorageAdapter(name, options, {
     typeName: 'storage.s3',

@@ -1,12 +1,12 @@
 Package.describe({
   name: 'cfs:s3',
-  version: '0.1.4',
+  version: '0.1.5',
   summary: "Amazon Web Services S3 storage adapter for CollectionFS",
   git: "https://github.com/CollectionFS/Meteor-CollectionFS/tree/master/packages/s3"
 });
 
 Npm.depends({
-  'aws-sdk': "2.0.23",
+  'aws-sdk': "2.393.0",
   // 'temp': '0.7.0', // used by the s3.indirect.streaming.js
   // 'through2': '0.4.1', // used by the s3.upload.stream.js
   // 'backoff': '2.3.0', // used by the s3.upload.stream.js
